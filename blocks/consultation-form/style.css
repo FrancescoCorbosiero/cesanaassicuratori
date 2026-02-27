@@ -1,0 +1,214 @@
+/**
+ * cesana/consultation-form — Frontend Styles
+ * Contact/consultation request form — primary conversion block
+ */
+
+.ca-consultation-form {
+    padding: var(--ca-space-section) 0;
+    background: var(--ca-gray-50);
+}
+
+.ca-consultation-form--dark {
+    background: var(--ca-navy);
+    color: var(--ca-white);
+}
+
+.ca-consultation-form__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--ca-space-xl);
+}
+
+.ca-consultation-form__header {
+    text-align: center;
+    margin-bottom: var(--ca-space-2xl);
+}
+
+.ca-consultation-form__title {
+    font-family: var(--ca-font-display);
+    font-size: var(--ca-text-3xl);
+    font-weight: 400;
+    color: var(--ca-navy);
+    margin-bottom: var(--ca-space-sm);
+}
+
+.ca-consultation-form--dark .ca-consultation-form__title {
+    color: var(--ca-white);
+}
+
+.ca-consultation-form__subtitle {
+    font-size: var(--ca-text-base);
+    color: var(--ca-gray-500);
+}
+
+.ca-consultation-form--dark .ca-consultation-form__subtitle {
+    color: var(--ca-gray-300);
+}
+
+.ca-consultation-form__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ca-space-lg);
+}
+
+.ca-consultation-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--ca-space-lg);
+}
+
+.ca-consultation-form__field {
+    display: flex;
+    flex-direction: column;
+}
+
+.ca-consultation-form__field--full {
+    grid-column: 1 / -1;
+}
+
+.ca-consultation-form__label {
+    font-family: var(--ca-font-sans);
+    font-size: var(--ca-text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--ca-space-xs);
+    color: var(--ca-navy);
+}
+
+.ca-consultation-form--dark .ca-consultation-form__label {
+    color: var(--ca-gray-300);
+}
+
+.ca-consultation-form__input,
+.ca-consultation-form__textarea {
+    padding: 0.875rem 1rem;
+    font-family: var(--ca-font-sans);
+    font-size: var(--ca-text-base);
+    border: 1px solid var(--ca-gray-200);
+    border-radius: var(--ca-radius-sm);
+    background: var(--ca-white);
+    color: var(--ca-gray-800);
+    transition: border-color 0.3s var(--ca-ease-premium);
+    width: 100%;
+}
+
+.ca-consultation-form__input:focus,
+.ca-consultation-form__textarea:focus {
+    outline: none;
+    border-color: var(--ca-gold);
+    box-shadow: none;
+}
+
+/* Dark variant — editorial bottom-border-only inputs */
+.ca-consultation-form--dark .ca-consultation-form__input,
+.ca-consultation-form--dark .ca-consultation-form__textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0;
+    color: var(--ca-white);
+    padding: 0.875rem 0;
+}
+
+.ca-consultation-form--dark .ca-consultation-form__input:focus,
+.ca-consultation-form--dark .ca-consultation-form__textarea:focus {
+    border-bottom-color: var(--ca-gold);
+    box-shadow: none;
+}
+
+.ca-consultation-form--dark .ca-consultation-form__input::placeholder,
+.ca-consultation-form--dark .ca-consultation-form__textarea::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.ca-consultation-form__textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.ca-consultation-form__checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--ca-space-sm);
+    font-size: var(--ca-text-sm);
+    cursor: pointer;
+}
+
+.ca-consultation-form__checkbox input[type="checkbox"] {
+    margin-top: 3px;
+    accent-color: var(--ca-gold);
+}
+
+.ca-consultation-form__checkbox a {
+    color: var(--ca-gold-dark);
+    text-decoration: underline;
+}
+
+.ca-consultation-form--dark .ca-consultation-form__checkbox a {
+    color: var(--ca-gold-light);
+}
+
+/* Honeypot */
+.ca-consultation-form__hp {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.ca-consultation-form__submit {
+    text-align: center;
+    margin-top: var(--ca-space-md);
+}
+
+.ca-consultation-form__submit .ca-btn {
+    min-width: 220px;
+}
+
+.ca-consultation-form__submit .ca-btn--loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Feedback */
+.ca-consultation-form__feedback {
+    text-align: center;
+    padding: var(--ca-space-md);
+    border-radius: var(--ca-radius-sm);
+    font-size: var(--ca-text-sm);
+    font-weight: 500;
+    display: none;
+}
+
+.ca-consultation-form__feedback--success {
+    display: block;
+    background: rgba(45, 140, 78, 0.1);
+    color: var(--ca-success);
+    border: 1px solid rgba(45, 140, 78, 0.2);
+}
+
+.ca-consultation-form__feedback--error {
+    display: block;
+    background: rgba(192, 57, 43, 0.1);
+    color: var(--ca-error);
+    border: 1px solid rgba(192, 57, 43, 0.2);
+}
+
+.ca-consultation-form--dark .ca-consultation-form__feedback--success {
+    background: rgba(45, 140, 78, 0.2);
+    color: #6FCF97;
+}
+
+.ca-consultation-form--dark .ca-consultation-form__feedback--error {
+    background: rgba(192, 57, 43, 0.2);
+    color: #F2847C;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .ca-consultation-form__row {
+        grid-template-columns: 1fr;
+    }
+}

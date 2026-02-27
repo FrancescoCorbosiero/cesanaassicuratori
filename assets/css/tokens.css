@@ -1,0 +1,99 @@
+/**
+ * Cesana Assicuratori — Design Tokens
+ * All CSS custom properties for the design system.
+ * Never hardcode values — always reference var(--ca-*).
+ */
+
+:root {
+    /* Bridge WP preset vars to CA design tokens */
+    --ca-navy: var(--wp--preset--color--ca-navy, #0C0C14);
+    --ca-navy-light: var(--wp--preset--color--ca-navy-light, #16161F);
+    --ca-navy-dark: var(--wp--preset--color--ca-navy-dark, #08080E);
+    --ca-white: var(--wp--preset--color--ca-white, #FFFFFF);
+    --ca-gold: var(--wp--preset--color--ca-gold, #B8973F);
+    --ca-gold-light: var(--wp--preset--color--ca-gold-light, #C9A84C);
+    --ca-gold-dark: var(--wp--preset--color--ca-gold-dark, #9A7E32);
+
+    /* Semantic */
+    --ca-success: #2D8C4E;
+    --ca-warning: #D4A017;
+    --ca-error: #C0392B;
+    --ca-info: #2980B9;
+
+    /* Neutrals — cool-tinted grays */
+    --ca-gray-50: var(--wp--preset--color--ca-gray-50, #F7F8FA);
+    --ca-gray-100: var(--wp--preset--color--ca-gray-100, #ECEEF2);
+    --ca-gray-200: var(--wp--preset--color--ca-gray-200, #D8DBE2);
+    --ca-gray-300: #B4B9C4;
+    --ca-gray-400: var(--wp--preset--color--ca-gray-400, #8B91A0);
+    --ca-gray-500: var(--wp--preset--color--ca-gray-500, #6B7080);
+    --ca-gray-600: var(--wp--preset--color--ca-gray-600, #4A4F5E);
+    --ca-gray-700: #2E323D;
+    --ca-gray-800: var(--wp--preset--color--ca-gray-800, #1E2028);
+    --ca-gray-900: #12131A;
+
+    /* Typography */
+    --ca-font-display: var(--wp--preset--font-family--ca-display, 'DM Serif Display', Georgia, 'Times New Roman', serif);
+    --ca-font-sans: var(--wp--preset--font-family--ca-sans, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+
+    /* Fluid type scale */
+    --ca-text-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+    --ca-text-sm: clamp(0.8125rem, 0.78rem + 0.2vw, 0.9375rem);
+    --ca-text-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+    --ca-text-lg: clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem);
+    --ca-text-xl: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+    --ca-text-2xl: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+    --ca-text-3xl: clamp(2rem, 1.5rem + 1.8vw, 3rem);
+    --ca-text-4xl: clamp(2.5rem, 1.8rem + 2.5vw, 3.75rem);
+    --ca-text-5xl: clamp(3rem, 2rem + 4vw, 5.5rem);
+
+    /* Spacing */
+    --ca-space-xs: 0.25rem;
+    --ca-space-sm: 0.5rem;
+    --ca-space-md: 1rem;
+    --ca-space-lg: 1.5rem;
+    --ca-space-xl: 2rem;
+    --ca-space-2xl: 3rem;
+    --ca-space-3xl: 4rem;
+    --ca-space-4xl: 6rem;
+    --ca-space-5xl: 8rem;
+    --ca-space-section: clamp(5rem, 3.5rem + 5vw, 9rem);
+
+    /* Easing */
+    --ca-ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+    --ca-ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+    --ca-ease-subtle: cubic-bezier(0.4, 0, 0.2, 1);
+    --ca-ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Shadows */
+    --ca-shadow-sm: 0 1px 3px rgba(12, 12, 20, 0.06);
+    --ca-shadow-md: 0 4px 16px rgba(12, 12, 20, 0.08);
+    --ca-shadow-lg: 0 8px 32px rgba(12, 12, 20, 0.10);
+    --ca-shadow-xl: 0 16px 48px rgba(12, 12, 20, 0.14);
+    --ca-shadow-card: 0 2px 12px rgba(12, 12, 20, 0.05);
+
+    /* Borders — sharp */
+    --ca-radius-sm: 2px;
+    --ca-radius-md: 2px;
+    --ca-radius-lg: 2px;
+    --ca-radius-xl: 4px;
+
+    /* Letter spacing */
+    --ca-tracking-eyebrow: 0.2em;
+    --ca-tracking-tight: -0.01em;
+    --ca-tracking-wide: 0.05em;
+
+    /* Z-Index */
+    --ca-z-dropdown: 100;
+    --ca-z-sticky: 200;
+    --ca-z-fixed: 500;
+    --ca-z-modal: 1000;
+
+    /* Max widths */
+    --ca-max-width: 1200px;
+    --ca-max-width-text: 720px;
+
+    /* Backdrop blur */
+    --ca-blur-sm: 8px;
+    --ca-blur-md: 16px;
+}

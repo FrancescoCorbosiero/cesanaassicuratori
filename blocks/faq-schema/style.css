@@ -1,0 +1,123 @@
+/**
+ * cesana/faq-schema — Frontend Styles
+ * Accordion with JSON-LD structured data — minimal, editorial
+ */
+
+.ca-faq {
+    padding: var(--ca-space-section) 0;
+    background: var(--ca-white);
+}
+
+.ca-faq__header {
+    text-align: left;
+    max-width: var(--ca-max-width);
+    margin: 0 auto var(--ca-space-2xl);
+    padding: 0 var(--ca-space-xl);
+}
+
+.ca-faq__title {
+    font-family: var(--ca-font-display);
+    font-size: var(--ca-text-3xl);
+    font-weight: 400;
+    color: var(--ca-navy);
+    margin-bottom: var(--ca-space-sm);
+}
+
+.ca-faq__subtitle {
+    font-size: var(--ca-text-base);
+    color: var(--ca-gray-500);
+}
+
+.ca-faq__list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--ca-space-xl);
+}
+
+.ca-faq__item {
+    border-bottom: 1px solid var(--ca-gray-200);
+}
+
+.ca-faq__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--ca-space-lg) 0;
+    background: none;
+    border: none;
+    font-family: var(--ca-font-sans);
+    font-size: var(--ca-text-base);
+    font-weight: 500;
+    color: var(--ca-navy);
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.2s ease;
+}
+
+.ca-faq__trigger:hover {
+    color: var(--ca-gold-dark);
+}
+
+.ca-faq__trigger:focus-visible {
+    outline: 2px solid var(--ca-gold);
+    outline-offset: 2px;
+}
+
+.ca-faq__icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    margin-left: var(--ca-space-lg);
+}
+
+.ca-faq__icon::before,
+.ca-faq__icon::after {
+    content: '';
+    position: absolute;
+    background: var(--ca-gray-400);
+    transition: transform 0.3s var(--ca-ease-premium), opacity 0.3s var(--ca-ease-premium);
+}
+
+.ca-faq__icon::before {
+    top: 50%;
+    left: 2px;
+    right: 2px;
+    height: 1px;
+    transform: translateY(-50%);
+}
+
+.ca-faq__icon::after {
+    left: 50%;
+    top: 2px;
+    bottom: 2px;
+    width: 1px;
+    transform: translateX(-50%);
+}
+
+.ca-faq__item--open .ca-faq__icon::after {
+    transform: translateX(-50%) rotate(90deg);
+    opacity: 0;
+}
+
+.ca-faq__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s var(--ca-ease-out);
+}
+
+.ca-faq__answer {
+    padding-bottom: var(--ca-space-lg);
+    font-size: var(--ca-text-base);
+    color: var(--ca-gray-600);
+    line-height: 1.7;
+}
+
+.ca-faq__answer p {
+    margin-bottom: var(--ca-space-md);
+}
+
+.ca-faq__answer p:last-child {
+    margin-bottom: 0;
+}

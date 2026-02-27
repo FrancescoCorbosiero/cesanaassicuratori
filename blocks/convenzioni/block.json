@@ -9,6 +9,7 @@
     "description": "Galleria di card con immagini, overlay frosted glass e animazioni di reveal per le convenzioni assicurative.",
     "keywords": ["convenzioni", "gallery", "card", "immagini", "accordi"],
     "textdomain": "cesana-assicuratori-blocks",
+    "requiresAtLeast": "6.5",
     "attributes": {
         "eyebrow": {
             "type": "string",
@@ -46,6 +47,8 @@
         "align": ["wide"],
         "html": false
     },
+    "example": {},
     "editorScript": "file:./editor.js",
+    "style": "file:./style.css",
     "render": "file:./render.php"
 }

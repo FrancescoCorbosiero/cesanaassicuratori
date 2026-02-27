@@ -9,6 +9,7 @@
     "description": "Header hero per pagine interne con breadcrumbs e titolo.",
     "keywords": ["hero", "header", "pagina", "breadcrumbs"],
     "textdomain": "cesana-assicuratori-blocks",
+    "requiresAtLeast": "6.5",
     "attributes": {
         "title": {
             "type": "string",
@@ -31,6 +32,8 @@
         "align": ["full"],
         "html": false
     },
+    "example": {},
     "editorScript": "file:./editor.js",
+    "style": "file:./style.css",
     "render": "file:./render.php"
 }

@@ -1,0 +1,167 @@
+/**
+ * cesana/logo-hero — Frontend Styles
+ * Logo + text hero variant — full-screen brand presentation
+ */
+
+.ca-logo-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--ca-navy);
+    overflow: hidden;
+    padding: var(--ca-space-4xl) var(--ca-space-xl);
+}
+
+/* Subtle radial gradient background pattern */
+.ca-logo-hero__bg-pattern {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(184, 151, 63, 0.06) 0%, transparent 70%),
+        radial-gradient(circle at 20% 80%, rgba(184, 151, 63, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(184, 151, 63, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Decorative corner accents */
+.ca-logo-hero__corner {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+.ca-logo-hero__corner--tl {
+    top: var(--ca-space-2xl);
+    left: var(--ca-space-2xl);
+    border-top: 1px solid var(--ca-gold);
+    border-left: 1px solid var(--ca-gold);
+}
+
+.ca-logo-hero__corner--tr {
+    top: var(--ca-space-2xl);
+    right: var(--ca-space-2xl);
+    border-top: 1px solid var(--ca-gold);
+    border-right: 1px solid var(--ca-gold);
+}
+
+.ca-logo-hero__corner--bl {
+    bottom: var(--ca-space-2xl);
+    left: var(--ca-space-2xl);
+    border-bottom: 1px solid var(--ca-gold);
+    border-left: 1px solid var(--ca-gold);
+}
+
+.ca-logo-hero__corner--br {
+    bottom: var(--ca-space-2xl);
+    right: var(--ca-space-2xl);
+    border-bottom: 1px solid var(--ca-gold);
+    border-right: 1px solid var(--ca-gold);
+}
+
+.ca-logo-hero__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    gap: var(--ca-space-lg);
+}
+
+.ca-logo-hero__eyebrow {
+    font-family: var(--ca-font-sans);
+    font-size: clamp(0.625rem, 0.6rem + 0.1vw, 0.6875rem);
+    font-weight: 600;
+    letter-spacing: var(--ca-tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--ca-gold);
+}
+
+.ca-logo-hero__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--ca-space-lg);
+}
+
+.ca-logo-hero__shield {
+    width: 64px;
+    height: 64px;
+    color: var(--ca-gold);
+    opacity: 0.35;
+}
+
+.ca-logo-hero__shield svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ca-logo-hero__logo {
+    max-width: 320px;
+    max-height: 160px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.ca-logo-hero__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1em;
+}
+
+.ca-logo-hero__title-line {
+    font-family: var(--ca-font-display);
+    font-size: clamp(3rem, 2rem + 4vw, 5.5rem);
+    line-height: 1;
+    color: var(--ca-white);
+    letter-spacing: 0.06em;
+}
+
+.ca-logo-hero__title-line--gold {
+    font-size: clamp(1.5rem, 1rem + 2vw, 2.8rem);
+    color: var(--ca-gold);
+    letter-spacing: 0.22em;
+}
+
+.ca-logo-hero__divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--ca-gold), transparent);
+}
+
+.ca-logo-hero__tagline {
+    font-family: var(--ca-font-display);
+    font-size: clamp(1.25rem, 1rem + 1vw, 2rem);
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+    max-width: 600px;
+}
+
+.ca-logo-hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ca-space-md);
+    justify-content: center;
+    margin-top: var(--ca-space-md);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .ca-logo-hero {
+        min-height: 80vh;
+        padding: var(--ca-space-3xl) var(--ca-space-lg);
+    }
+
+    .ca-logo-hero__corner {
+        display: none;
+    }
+}

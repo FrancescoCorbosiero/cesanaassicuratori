@@ -9,6 +9,7 @@
     "description": "Sezione statistiche animate con contatore: anni di esperienza, soddisfazione clienti, convenzioni.",
     "keywords": ["stats", "statistiche", "contatore", "numeri", "testimonial"],
     "textdomain": "cesana-assicuratori-blocks",
+    "requiresAtLeast": "6.5",
     "attributes": {
         "title": {
             "type": "string",
@@ -44,6 +45,8 @@
         "align": ["wide", "full"],
         "html": false
     },
+    "example": {},
     "editorScript": "file:./editor.js",
+    "style": "file:./style.css",
     "render": "file:./render.php"
 }

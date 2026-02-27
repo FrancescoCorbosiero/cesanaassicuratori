@@ -1,7 +1,7 @@
 <?php
 /**
- * Contact Form Handler
- * Processes AJAX form submissions from the consultation-form block
+ * Contact Form Handler — REST API
+ * Processes form submissions from the consultation-form block via WP REST API.
  */
 
 if (!defined('ABSPATH')) {
@@ -10,44 +10,53 @@ if (!defined('ABSPATH')) {
 
 class CA_Contact_Form
 {
+    const NAMESPACE = 'cesana/v1';
+
     public static function init()
     {
-        add_action('wp_ajax_ca_contact_form', [__CLASS__, 'handle_submission']);
-        add_action('wp_ajax_nopriv_ca_contact_form', [__CLASS__, 'handle_submission']);
+        add_action('rest_api_init', [__CLASS__, 'register_routes']);
     }
 
-    public static function handle_submission()
+    public static function register_routes()
     {
-        // Verify nonce
-        if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'ca_contact_form')) {
-            wp_send_json_error('Errore di sicurezza. Ricarica la pagina e riprova.');
-            return;
+        register_rest_route(self::NAMESPACE, '/contact', [
+            'methods'             => 'POST',
+            'callback'            => [__CLASS__, 'handle_submission'],
+            'permission_callback' => '__return_true',
+            'args'                => [
+                'name'    => ['required' => true, 'sanitize_callback' => 'sanitize_text_field'],
+                'email'   => ['required' => true, 'sanitize_callback' => 'sanitize_email', 'validate_callback' => 'is_email'],
+                'message' => ['required' => true, 'sanitize_callback' => 'sanitize_textarea_field'],
+                'phone'   => ['sanitize_callback' => 'sanitize_text_field'],
+                'subject' => ['sanitize_callback' => 'sanitize_text_field'],
+            ],
+        ]);
+    }
+
+    public static function handle_submission($request)
+    {
+        // Rate limiting via transient (5 submissions per IP per hour)
+        $ip = sanitize_text_field($_SERVER['REMOTE_ADDR'] ?? '');
+        $rate_key = 'ca_form_rate_' . md5($ip);
+        $attempts = (int) get_transient($rate_key);
+
+        if ($attempts >= 5) {
+            return new WP_Error('rate_limited', 'Troppe richieste. Riprova tra qualche minuto.', ['status' => 429]);
         }
 
-        // Honeypot check
-        if (!empty($_POST['website'])) {
-            wp_send_json_error('Invio non valido.');
-            return;
+        set_transient($rate_key, $attempts + 1, HOUR_IN_SECONDS);
+
+        // Honeypot
+        if (!empty($request->get_param('website'))) {
+            return new WP_Error('invalid', 'Invio non valido.', ['status' => 400]);
         }
 
-        // Validate required fields
-        $name = isset($_POST['name']) ? sanitize_text_field($_POST['name']) : '';
-        $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
-        $message = isset($_POST['message']) ? sanitize_textarea_field($_POST['message']) : '';
-
-        if (empty($name) || empty($email) || empty($message)) {
-            wp_send_json_error('Compila tutti i campi obbligatori.');
-            return;
-        }
-
-        if (!is_email($email)) {
-            wp_send_json_error('Inserisci un indirizzo email valido.');
-            return;
-        }
-
-        // Optional fields
-        $phone = isset($_POST['phone']) ? sanitize_text_field($_POST['phone']) : '';
-        $subject = isset($_POST['subject']) ? sanitize_text_field($_POST['subject']) : '';
+        // Extract validated params
+        $name    = $request->get_param('name');
+        $email   = $request->get_param('email');
+        $message = $request->get_param('message');
+        $phone   = $request->get_param('phone') ?: '';
+        $subject = $request->get_param('subject') ?: '';
 
         // Build email
         $to = apply_filters('ca_contact_form_recipient', 'info@cesanaassicuratori.it');
@@ -75,7 +84,7 @@ class CA_Contact_Form
             $subject ?: '—',
             $message,
             current_time('d/m/Y H:i'),
-            isset($_SERVER['REMOTE_ADDR']) ? sanitize_text_field($_SERVER['REMOTE_ADDR']) : '—',
+            $ip ?: '—',
             isset($_SERVER['HTTP_REFERER']) ? esc_url_raw($_SERVER['HTTP_REFERER']) : '—'
         );
 
@@ -88,9 +97,12 @@ class CA_Contact_Form
         $sent = wp_mail($to, $email_subject, $body, $headers);
 
         if ($sent) {
-            wp_send_json_success('Grazie! La tua richiesta è stata inviata. Ti ricontatteremo entro 24 ore.');
-        } else {
-            wp_send_json_error('Si è verificato un errore nell\'invio. Contattaci direttamente al 039.484346.');
+            return rest_ensure_response([
+                'success' => true,
+                'message' => 'Grazie! Ti ricontatteremo entro 24 ore.',
+            ]);
         }
+
+        return new WP_Error('send_failed', 'Si è verificato un errore nell\'invio. Contattaci direttamente al 039.484346.', ['status' => 500]);
     }
 }

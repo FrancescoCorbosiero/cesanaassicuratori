@@ -1,0 +1,108 @@
+/**
+ * cesana/cta-banner — Frontend Styles
+ * Full-width call-to-action section — left-aligned, editorial
+ */
+
+.ca-cta-banner {
+    position: relative;
+    padding: var(--ca-space-section) 0;
+    overflow: hidden;
+}
+
+/* Variants */
+.ca-cta-banner--navy {
+    background: var(--ca-navy);
+    color: var(--ca-white);
+}
+
+.ca-cta-banner--gold {
+    background: linear-gradient(135deg, var(--ca-gold-dark), var(--ca-gold));
+    color: var(--ca-navy);
+}
+
+.ca-cta-banner--light {
+    background: var(--ca-gray-50);
+    color: var(--ca-navy);
+}
+
+.ca-cta-banner__bg {
+    position: absolute;
+    inset: 0;
+}
+
+.ca-cta-banner__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ca-cta-banner__overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.ca-cta-banner--navy .ca-cta-banner__overlay {
+    background: rgba(12, 12, 20, 0.88);
+}
+
+.ca-cta-banner--gold .ca-cta-banner__overlay {
+    background: rgba(184, 151, 63, 0.88);
+}
+
+.ca-cta-banner--light .ca-cta-banner__overlay {
+    background: rgba(247, 248, 250, 0.92);
+}
+
+.ca-cta-banner__content {
+    position: relative;
+    z-index: 2;
+    max-width: var(--ca-max-width);
+    margin: 0 auto;
+    padding: 0 var(--ca-space-xl);
+    text-align: left;
+}
+
+.ca-cta-banner__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--ca-font-sans);
+    font-size: var(--ca-text-xs);
+    font-weight: 500;
+    letter-spacing: var(--ca-tracking-eyebrow);
+    text-transform: uppercase;
+    margin-bottom: var(--ca-space-md);
+}
+
+.ca-cta-banner__eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--ca-gold);
+    margin-right: 0.75rem;
+}
+
+.ca-cta-banner--navy .ca-cta-banner__eyebrow {
+    color: var(--ca-gold);
+}
+
+.ca-cta-banner--gold .ca-cta-banner__eyebrow {
+    color: var(--ca-navy-dark);
+    opacity: 0.7;
+}
+
+.ca-cta-banner__title {
+    font-family: var(--ca-font-display);
+    font-size: var(--ca-text-4xl);
+    font-weight: 400;
+    line-height: 1.05;
+    margin-bottom: var(--ca-space-lg);
+    max-width: 700px;
+}
+
+.ca-cta-banner__text {
+    font-size: var(--ca-text-lg);
+    max-width: 550px;
+    margin: 0 0 var(--ca-space-xl);
+    opacity: 0.75;
+}

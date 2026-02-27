@@ -9,6 +9,7 @@
     "description": "Accordion FAQ ottimizzato SEO con structured data schema per rich snippets.",
     "keywords": ["faq", "domande", "accordion", "schema", "seo"],
     "textdomain": "cesana-assicuratori-blocks",
+    "requiresAtLeast": "6.5",
     "attributes": {
         "title": {
             "type": "string",
@@ -22,12 +23,12 @@
             "type": "array",
             "default": [
                 {
-                    "question": "Cos'è un broker assicurativo?",
-                    "answer": "Un broker assicurativo è un professionista indipendente che opera nell'interesse del cliente, analizzando il mercato per trovare le migliori soluzioni assicurative."
+                    "question": "Cos'\u00e8 un broker assicurativo?",
+                    "answer": "Un broker assicurativo \u00e8 un professionista indipendente che opera nell'interesse del cliente, analizzando il mercato per trovare le migliori soluzioni assicurative."
                 },
                 {
-                    "question": "La consulenza è gratuita?",
-                    "answer": "Sì, la nostra consulenza iniziale è completamente gratuita e senza impegno. Analizzeremo le vostre esigenze per proporvi le soluzioni più adatte."
+                    "question": "La consulenza \u00e8 gratuita?",
+                    "answer": "S\u00ec, la nostra consulenza iniziale \u00e8 completamente gratuita e senza impegno. Analizzeremo le vostre esigenze per proporvi le soluzioni pi\u00f9 adatte."
                 }
             ]
         },
@@ -40,6 +41,9 @@
         "align": ["wide"],
         "html": false
     },
+    "example": {},
     "editorScript": "file:./editor.js",
+    "style": "file:./style.css",
+    "viewScriptModule": "file:./view.js",
     "render": "file:./render.php"
 }

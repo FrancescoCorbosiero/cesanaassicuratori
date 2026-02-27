@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "cesana/testimonials",
+    "name": "cesana/testimonials-slider",
     "version": "1.0.0",
     "title": "Testimonials Slider",
     "category": "cesana",
@@ -9,6 +9,7 @@
     "description": "Slider di testimonianze con drag/swipe, citazioni in serif italic e navigazione avanzata.",
     "keywords": ["testimonials", "slider", "citazioni", "recensioni", "clienti"],
     "textdomain": "cesana-assicuratori-blocks",
+    "requiresAtLeast": "6.5",
     "attributes": {
         "eyebrow": {
             "type": "string",
@@ -22,7 +23,7 @@
             "type": "array",
             "default": [
                 {
-                    "quote": "Professionalità e disponibilità fuori dal comune. Cesana Assicuratori ha trovato la soluzione perfetta per la nostra azienda.",
+                    "quote": "Professionalit\u00e0 e disponibilit\u00e0 fuori dal comune. Cesana Assicuratori ha trovato la soluzione perfetta per la nostra azienda.",
                     "author": "Marco Rossi",
                     "role": "Amministratore Delegato, Rossi S.r.l.",
                     "photo": ""
@@ -44,6 +45,9 @@
         "align": ["wide", "full"],
         "html": false
     },
+    "example": {},
     "editorScript": "file:./editor.js",
+    "style": "file:./style.css",
+    "viewScriptModule": "file:./view.js",
     "render": "file:./render.php"
 }
