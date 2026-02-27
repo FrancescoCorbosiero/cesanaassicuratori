@@ -1,0 +1,52 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "cesana/logo-hero",
+    "version": "1.0.0",
+    "title": "Logo Hero",
+    "category": "cesana",
+    "icon": "star-filled",
+    "description": "Sezione hero centrata sul brand con logo grande, tagline editoriale e CTA prominente.",
+    "keywords": ["logo", "brand", "hero", "identita", "cta"],
+    "textdomain": "cesana-assicuratori-blocks",
+    "attributes": {
+        "logoUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "title": {
+            "type": "string",
+            "default": "Cesana Assicuratori"
+        },
+        "subtitle": {
+            "type": "string",
+            "default": "Broker Assicurativo Indipendente"
+        },
+        "tagline": {
+            "type": "string",
+            "default": "Reputazione + Rispetto = Risultato"
+        },
+        "ctaText": {
+            "type": "string",
+            "default": "Consulenza Gratuita"
+        },
+        "ctaUrl": {
+            "type": "string",
+            "default": "#contact"
+        },
+        "secondaryCtaText": {
+            "type": "string",
+            "default": ""
+        },
+        "secondaryCtaUrl": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "align": ["wide", "full"],
+        "html": false
+    },
+    "editorScript": "file:./editor.js",
+    "render": "file:./render.php"
+}

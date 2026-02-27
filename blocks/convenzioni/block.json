@@ -1,0 +1,51 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "cesana/convenzioni",
+    "version": "1.0.0",
+    "title": "Convenzioni",
+    "category": "cesana",
+    "icon": "images-alt2",
+    "description": "Galleria di card con immagini, overlay frosted glass e animazioni di reveal per le convenzioni assicurative.",
+    "keywords": ["convenzioni", "gallery", "card", "immagini", "accordi"],
+    "textdomain": "cesana-assicuratori-blocks",
+    "attributes": {
+        "eyebrow": {
+            "type": "string",
+            "default": "Convenzioni"
+        },
+        "title": {
+            "type": "string",
+            "default": "Le Nostre Convenzioni"
+        },
+        "subtitle": {
+            "type": "string",
+            "default": "Coperture assicurative a condizioni vantaggiose per ordini professionali e CRAL ospedalieri."
+        },
+        "convenzioni": {
+            "type": "array",
+            "default": [
+                {
+                    "image": "",
+                    "title": "Ordine degli Ingegneri",
+                    "description": "Polizze RC Professionale a condizioni riservate.",
+                    "category": "Ordini Professionali",
+                    "url": ""
+                },
+                {
+                    "image": "",
+                    "title": "CRAL Ospedaliero",
+                    "description": "Coperture sanitarie e infortuni per dipendenti.",
+                    "category": "CRAL",
+                    "url": ""
+                }
+            ]
+        }
+    },
+    "supports": {
+        "align": ["wide"],
+        "html": false
+    },
+    "editorScript": "file:./editor.js",
+    "render": "file:./render.php"
+}

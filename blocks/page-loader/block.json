@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "cesana/page-loader",
+    "version": "1.0.0",
+    "title": "Page Loader",
+    "category": "cesana",
+    "icon": "update",
+    "description": "Animated loader overlay with logo and tagline, shown once per session on first page load.",
+    "keywords": ["loader", "loading", "splash", "intro", "animazione"],
+    "textdomain": "cesana-assicuratori-blocks",
+    "attributes": {
+        "logoUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "tagline": {
+            "type": "string",
+            "default": "Broker Assicurativo Indipendente"
+        },
+        "duration": {
+            "type": "number",
+            "default": 2800
+        }
+    },
+    "supports": {
+        "align": false,
+        "html": false,
+        "multiple": false
+    },
+    "editorScript": "file:./editor.js",
+    "render": "file:./render.php"
+}

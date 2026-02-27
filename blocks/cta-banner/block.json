@@ -1,0 +1,49 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "cesana/cta-banner",
+    "version": "1.0.0",
+    "title": "CTA Banner",
+    "category": "cesana",
+    "icon": "megaphone",
+    "description": "Banner call-to-action a larghezza piena con varianti navy, oro e chiaro.",
+    "keywords": ["cta", "banner", "azione", "contatto", "consulenza"],
+    "textdomain": "cesana-assicuratori-blocks",
+    "attributes": {
+        "eyebrow": {
+            "type": "string",
+            "default": ""
+        },
+        "title": {
+            "type": "string",
+            "default": "Proteggi Ciò Che Conta"
+        },
+        "text": {
+            "type": "string",
+            "default": "Richiedi una consulenza gratuita e senza impegno con i nostri esperti."
+        },
+        "buttonText": {
+            "type": "string",
+            "default": "Contattaci"
+        },
+        "buttonUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "backgroundImage": {
+            "type": "string",
+            "default": ""
+        },
+        "variant": {
+            "type": "string",
+            "default": "navy",
+            "enum": ["navy", "gold", "light"]
+        }
+    },
+    "supports": {
+        "align": ["full"],
+        "html": false
+    },
+    "editorScript": "file:./editor.js",
+    "render": "file:./render.php"
+}

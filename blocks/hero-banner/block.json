@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "cesana/hero-banner",
+    "version": "1.0.0",
+    "title": "Hero Banner",
+    "category": "cesana",
+    "icon": "slides",
+    "description": "Banner hero full-screen con crossfade e CTA per homepage broker assicurativo.",
+    "keywords": ["hero", "banner", "slider", "homepage"],
+    "textdomain": "cesana-assicuratori-blocks",
+    "attributes": {
+        "slides": {
+            "type": "array",
+            "default": [
+                {
+                    "image": "",
+                    "eyebrow": "Broker Assicurativo Indipendente",
+                    "title": "Protezione su Misura per Te",
+                    "subtitle": "Soluzioni assicurative personalizzate per privati e aziende dal 1998.",
+                    "buttonText": "Consulenza Gratuita",
+                    "buttonUrl": "#consulenza"
+                }
+            ]
+        },
+        "autoplay": {
+            "type": "number",
+            "default": 8000
+        },
+        "showDots": {
+            "type": "boolean",
+            "default": true
+        },
+        "showArrows": {
+            "type": "boolean",
+            "default": true
+        }
+    },
+    "supports": {
+        "align": ["full"],
+        "html": false
+    },
+    "editorScript": "file:./editor.js",
+    "render": "file:./render.php"
+}

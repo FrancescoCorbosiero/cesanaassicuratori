@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "cesana/trust-indicators",
+    "version": "1.0.0",
+    "title": "Trust Indicators",
+    "category": "cesana",
+    "icon": "shield",
+    "description": "Striscia orizzontale con indicatori di fiducia: anni di esperienza, soddisfazione, certificazioni.",
+    "keywords": ["trust", "fiducia", "badge", "indicatori", "esperienza"],
+    "textdomain": "cesana-assicuratori-blocks",
+    "attributes": {
+        "indicators": {
+            "type": "array",
+            "default": [
+                {
+                    "icon": "clock",
+                    "title": "25+ Anni",
+                    "description": "di esperienza"
+                },
+                {
+                    "icon": "users",
+                    "title": "1500+",
+                    "description": "clienti attivi"
+                },
+                {
+                    "icon": "shield",
+                    "title": "100%",
+                    "description": "indipendente"
+                },
+                {
+                    "icon": "star",
+                    "title": "4.9/5",
+                    "description": "valutazione media"
+                }
+            ]
+        },
+        "variant": {
+            "type": "string",
+            "default": "default",
+            "enum": ["default", "dark"]
+        }
+    },
+    "supports": {
+        "align": ["wide", "full"],
+        "html": false
+    },
+    "editorScript": "file:./editor.js",
+    "render": "file:./render.php"
+}

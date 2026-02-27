@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "cesana/faq-schema",
+    "version": "1.0.0",
+    "title": "FAQ Schema",
+    "category": "cesana",
+    "icon": "editor-help",
+    "description": "Accordion FAQ ottimizzato SEO con structured data schema per rich snippets.",
+    "keywords": ["faq", "domande", "accordion", "schema", "seo"],
+    "textdomain": "cesana-assicuratori-blocks",
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": "Domande Frequenti"
+        },
+        "subtitle": {
+            "type": "string",
+            "default": ""
+        },
+        "items": {
+            "type": "array",
+            "default": [
+                {
+                    "question": "Cos'è un broker assicurativo?",
+                    "answer": "Un broker assicurativo è un professionista indipendente che opera nell'interesse del cliente, analizzando il mercato per trovare le migliori soluzioni assicurative."
+                },
+                {
+                    "question": "La consulenza è gratuita?",
+                    "answer": "Sì, la nostra consulenza iniziale è completamente gratuita e senza impegno. Analizzeremo le vostre esigenze per proporvi le soluzioni più adatte."
+                }
+            ]
+        },
+        "allowMultiple": {
+            "type": "boolean",
+            "default": false
+        }
+    },
+    "supports": {
+        "align": ["wide"],
+        "html": false
+    },
+    "editorScript": "file:./editor.js",
+    "render": "file:./render.php"
+}

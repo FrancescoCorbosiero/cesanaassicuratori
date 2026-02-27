@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "cesana/consultation-form",
+    "version": "1.0.0",
+    "title": "Consultation Form",
+    "category": "cesana",
+    "icon": "email",
+    "description": "Form di richiesta consulenza gratuita con invio AJAX. Presente su ogni pagina prodotto.",
+    "keywords": ["form", "contatto", "consulenza", "email", "richiesta"],
+    "textdomain": "cesana-assicuratori-blocks",
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": "Ottieni una consulenza gratuita"
+        },
+        "subtitle": {
+            "type": "string",
+            "default": "Compila il modulo e ti ricontatteremo entro 24 ore."
+        },
+        "recipientEmail": {
+            "type": "string",
+            "default": "info@cesanaassicuratori.it"
+        },
+        "subjectPrefix": {
+            "type": "string",
+            "default": "[Sito Web]"
+        },
+        "privacyUrl": {
+            "type": "string",
+            "default": "/privacy-policy"
+        },
+        "variant": {
+            "type": "string",
+            "default": "default",
+            "enum": ["default", "dark"]
+        }
+    },
+    "supports": {
+        "align": ["wide"],
+        "html": false
+    },
+    "editorScript": "file:./editor.js",
+    "render": "file:./render.php"
+}

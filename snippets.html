@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Cesana Assicuratori Blocks — WordPress Code Editor Snippets</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', -apple-system, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; padding: 2rem; }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; color: #0B1D3A; }
+        .intro { color: #666; margin-bottom: 2rem; max-width: 700px; }
+        .block-snippet { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; }
+        .block-snippet__header { padding: 1rem 1.25rem; background: #0B1D3A; color: #fff; display: flex; justify-content: space-between; align-items: center; }
+        .block-snippet__title { font-weight: 600; font-size: 1rem; }
+        .block-snippet__badge { background: #C9A84C; color: #0B1D3A; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+        .block-snippet__desc { padding: 0.75rem 1.25rem; font-size: 0.85rem; color: #666; border-bottom: 1px solid #eee; }
+        .block-snippet__code { position: relative; }
+        .block-snippet__code pre { padding: 1.25rem; overflow-x: auto; font-size: 0.8rem; line-height: 1.5; background: #fafafa; }
+        .block-snippet__code code { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; color: #1a1a1a; white-space: pre; }
+        .copy-btn { position: absolute; top: 0.5rem; right: 0.75rem; padding: 4px 12px; border: 1px solid #ccc; border-radius: 4px; background: #fff; cursor: pointer; font-size: 0.75rem; }
+        .copy-btn:hover { background: #C9A84C; color: #0B1D3A; border-color: #C9A84C; }
+        .note { background: #FFF8E1; border: 1px solid #C9A84C; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 2rem; font-size: 0.85rem; }
+        .note strong { color: #0B1D3A; }
+    </style>
+</head>
+<body>
+
+<h1>Cesana Assicuratori Blocks — Snippets per WordPress Code Editor</h1>
+<p class="intro">Copia e incolla questi snippet nell'editor di codice di WordPress (Appearance → Editor → Code Editor, oppure ⌘⇧⌥M / Ctrl+Shift+Alt+M nell'editor a blocchi) per inserire ciascun blocco con contenuti di esempio.</p>
+
+<div class="note">
+    <strong>Nota:</strong> Questi snippet contengono dati di esempio realistici basati su Cesana Assicuratori. Sostituisci le URL delle immagini con le tue. Per le immagini placeholder puoi usare <code>https://placehold.co/1920x800/0B1D3A/C9A84C?text=Hero</code>.
+</div>
+
+<!-- ===== 1. HERO BANNER ===== -->
+<div class="block-snippet">
+    <div class="block-snippet__header">
+        <span class="block-snippet__title">1. cesana/hero-banner</span>
+        <span class="block-snippet__badge">Homepage</span>
+    </div>
+    <div class="block-snippet__desc">Banner hero full-screen con slide crossfade, titoli e CTA. Usare nella homepage.</div>
+    <div class="block-snippet__code">
+        <button class="copy-btn" onclick="copySnippet(this)">Copia</button>
+<pre><code>&lt;!-- wp:cesana/hero-banner {"slides":[{"image":"https://placehold.co/1920x800/0B1D3A/C9A84C?text=Assicurati","eyebrow":"Cesana Assicuratori","title":"Assicurati &amp; Rilassati","subtitle":"Da oltre 30 anni al fianco di aziende e professionisti. Broker assicurativo indipendente a Lissone.","buttonText":"Richiedi Consulenza Gratuita","buttonUrl":"/contatti/dove-siamo"},{"image":"https://placehold.co/1920x800/132B50/C9A84C?text=Risk+Management","eyebrow":"Risk Management","title":"Reputazione + Rispetto = Risultato","subtitle":"Analisi dei rischi, ottimizzazione polizze, riduzione costi. Il broker lavora per te, non per la compagnia.","buttonText":"Scopri i Servizi","buttonUrl":"/prodotti-assicurativi"}],"autoplay":8000,"showDots":true,"showArrows":true} /--&gt;</code></pre>
+    </div>
+</div>
+
+<!-- ===== 2. PAGE HERO ===== -->
+<div class="block-snippet">
+    <div class="block-snippet__header">
+        <span class="block-snippet__title">2. cesana/page-hero</span>
+        <span class="block-snippet__badge">Pagine Interne</span>
+    </div>
+    <div class="block-snippet__desc">Header per pagine interne con breadcrumbs. Usare in cima a ogni pagina di sezione.</div>
+    <div class="block-snippet__code">
+        <button class="copy-btn" onclick="copySnippet(this)">Copia</button>
+<pre><code>&lt;!-- wp:cesana/page-hero {"title":"Prodotti Assicurativi","subtitle":"Soluzioni su misura per ogni esigenza assicurativa","backgroundImage":"https://placehold.co/1920x500/0B1D3A/C9A84C?text=Prodotti","breadcrumbs":[{"label":"Home","url":"/"},{"label":"Prodotti Assicurativi"}]} /--&gt;</code></pre>
+    </div>
+</div>
+
+<!-- ===== 3. TRUST INDICATORS ===== -->
+<div class="block-snippet">
+    <div class="block-snippet__header">
+        <span class="block-snippet__title">3. cesana/trust-indicators</span>
+        <span class="block-snippet__badge">Homepage / About</span>
+    </div>
+    <div class="block-snippet__desc">Striscia orizzontale con indicatori di fiducia. Icone disponibili: shield, handshake, chart, clock, search, scale, star, users.</div>
+    <div class="block-snippet__code">
+        <button class="copy-btn" onclick="copySnippet(this)">Copia</button>
+<pre><code>&lt;!-- wp:cesana/trust-indicators {"variant":"dark","indicators":[{"icon":"clock","title":"30+ Anni","description":"di esperienza"},{"icon":"star","title":"98%","description":"clienti soddisfatti"},{"icon":"shield","title":"IVASS","description":"N. B000148399"},{"icon":"handshake","title":"Indipendente","description":"broker imparziale"}]} /--&gt;</code></pre>
+    </div>
+</div>
+
+<!-- ===== 4. SERVICES GRID ===== -->
+<div class="block-snippet">
+    <div class="block-snippet__header">
+        <span class="block-snippet__title">4. cesana/services-grid</span>
+        <span class="block-snippet__badge">Homepage</span>
+    </div>
+    <div class="block-snippet__desc">Griglia servizi assicurativi. Icone disponibili: building, tool, shop, stethoscope, lock, car, heart, briefcase, plane, shield, file-text, truck. Colonne: 2, 3, o 4.</div>
+    <div class="block-snippet__code">
+        <button class="copy-btn" onclick="copySnippet(this)">Copia</button>
+<pre><code>&lt;!-- wp:cesana/services-grid {"title":"I Nostri Servizi","subtitle":"Soluzioni assicurative personalizzate per ogni esigenza","columns":3,"services":[{"icon":"building","title":"Aziende","description":"RC, Property All Risk, D&amp;O, Infortuni cumulativa, Tutela Legale","url":"/prodotti-assicurativi/polizze-aziende"},{"icon":"tool","title":"Artigiani","description":"RC, Incendio, Furto, Trasporti, Assistenza, Tutela Legale","url":"/prodotti-assicurativi/polizze-artigiani"},{"icon":"shop","title":"Commercio","description":"Incendio, Furto, Cristalli, RC, Tutela Legale, Assistenza","url":"/prodotti-assicurativi/commercio"},{"icon":"stethoscope","title":"RC Professionale","description":"Area Tecnica, Giuridica e Medica (Malpractice)","url":"/prodotti-assicurativi/rcp-area-tecnica"},{"icon":"lock","title":"Cyber Risks","description":"Protezione patrimonio informatico, furto dati, interruzione business","url":"/prodotti-assicurativi/cyber-risks"},{"icon":"car","title":"Auto Storiche","description":"Polizze All Risks per veicoli d'epoca, rievocazioni e raduni","url":"/prodotti-assicurativi/auto-storiche-e-moto-d-epoca"},{"icon":"heart","title":"Salute","description":"Coperture sanitarie per privati, famiglie e aziende","url":"/prodotti-assicurativi/polizze-salute"},{"icon":"file-text","title":"Fideiussioni","description":"Fideiussioni e cauzioni per imprese e professionisti","url":"/prodotti-assicurativi/fideiussioni-e-cauzioni"},{"icon":"plane","title":"Viaggi","description":"Polizze viaggio per privati e aziende","url":"/prodotti-assicurativi/polizza-viaggi"}]} /--&gt;</code></pre>
+    </div>
+</div>
+
+<!-- ===== 5. CONSULTATION FORM ===== -->
+<div class="block-snippet">
+    <div class="block-snippet__header">
+        <span class="block-snippet__title">5. cesana/consultation-form</span>
+        <span class="block-snippet__badge">Ogni Pagina Prodotto</span>
+    </div>
+    <div class="block-snippet__desc">Form di richiesta consulenza con invio AJAX. Inserire in fondo a ogni pagina prodotto. Varianti: "default" (sfondo chiaro) o "dark" (sfondo navy).</div>
+    <div class="block-snippet__code">
+        <button class="copy-btn" onclick="copySnippet(this)">Copia</button>
+<pre><code>&lt;!-- wp:cesana/consultation-form {"title":"Ottieni una consulenza gratuita","subtitle":"Compila il modulo e ti ricontatteremo entro 24 ore.","recipientEmail":"info@cesanaassicuratori.it","subjectPrefix":"[Sito Web]","privacyUrl":"/privacy-policy","variant":"dark"} /--&gt;</code></pre>
+    </div>
+</div>
+
+<!-- ===== 6. FAQ SCHEMA ===== -->
+<div class="block-snippet">
+    <div class="block-snippet__header">
+        <span class="block-snippet__title">6. cesana/faq-schema</span>
+        <span class="block-snippet__badge">Multipla</span>
+    </div>
+    <div class="block-snippet__desc">FAQ accordion con JSON-LD per SEO. Il campo "answer" supporta HTML (grassetto, link, elenchi). allowMultiple: true per aprire più risposte contemporaneamente.</div>
+    <div class="block-snippet__code">
+        <button class="copy-btn" onclick="copySnippet(this)">Copia</button>
+<pre><code>&lt;!-- wp:cesana/faq-schema {"title":"Domande Frequenti","subtitle":"Le risposte alle domande più comuni sul brokeraggio assicurativo","allowMultiple":false,"items":[{"question":"Qual è la differenza tra un broker e un agente assicurativo?","answer":"Il broker è un intermediario &lt;strong&gt;indipendente&lt;/strong&gt; che non rappresenta nessuna compagnia assicurativa. Lavora esclusivamente nell'interesse del cliente, cercando la migliore soluzione sul mercato. L'agente, invece, rappresenta una o più compagnie specifiche."},{"question":"La consulenza iniziale è gratuita?","answer":"Sì, la prima consulenza è sempre gratuita e senza impegno. Analizziamo la tua situazione assicurativa e ti proponiamo le soluzioni più adatte alle tue reali esigenze."},{"question":"In quali zone operate?","answer":"La nostra sede è a Lissone (MB), in Via G. Matteotti 10/A. Operiamo principalmente nelle province di Monza e Brianza, Varese e Milano, ma gestiamo clienti su tutto il territorio nazionale."},{"question":"Come posso verificare la vostra iscrizione?","answer":"Siamo iscritti al RUI (Registro Unico degli Intermediari) con il numero &lt;strong&gt;B000148399&lt;/strong&gt;. Puoi verificare la nostra iscrizione sul sito &lt;a href='https://servizi.ivass.it/RuirPubblica/' target='_blank'&gt;IVASS&lt;/a&gt;."}]} /--&gt;</code></pre>
+    </div>
+</div>
+
+<!-- ===== 7. CTA BANNER ===== -->
+<div class="block-snippet">
+    <div class="block-snippet__header">
+        <span class="block-snippet__title">7. cesana/cta-banner</span>
+        <span class="block-snippet__badge">Separatore Sezione</span>
+    </div>
+    <div class="block-snippet__desc">Banner call-to-action a larghezza piena. Varianti: "navy" (blu scuro), "gold" (oro), "light" (grigio chiaro). Supporta immagine di sfondo.</div>
+    <div class="block-snippet__code">
+        <button class="copy-btn" onclick="copySnippet(this)">Copia</button>
+<pre><code>&lt;!-- wp:cesana/cta-banner {"eyebrow":"Cesana Assicuratori","title":"Reputazione + Rispetto = Risultato","text":"Da oltre 30 anni al fianco di aziende e professionisti. Richiedi una consulenza gratuita senza impegno.","buttonText":"Contattaci Ora","buttonUrl":"/contatti/dove-siamo","variant":"navy"} /--&gt;
+
+&lt;!-- Variante Gold --&gt;
+&lt;!-- wp:cesana/cta-banner {"title":"Proteggi il tuo futuro oggi","text":"Il broker lavora per te, non per la compagnia. Scopri la differenza.","buttonText":"Scopri di Più","buttonUrl":"/perche-affidarsi-ad-un-broker","variant":"gold"} /--&gt;
+
+&lt;!-- Variante Light --&gt;
+&lt;!-- wp:cesana/cta-banner {"eyebrow":"Risk Management","title":"Analisi gratuita delle tue polizze","text":"Ottimizziamo costi e coperture. Potresti risparmiare senza perdere protezione.","buttonText":"Richiedi Analisi","buttonUrl":"#consulenza","variant":"light"} /--&gt;</code></pre>
+    </div>
+</div>
+
+<!-- ===== 8. TESTIMONIAL STATS ===== -->
+<div class="block-snippet">
+    <div class="block-snippet__header">
+        <span class="block-snippet__title">8. cesana/testimonial-stats</span>
+        <span class="block-snippet__badge">Homepage</span>
+    </div>
+    <div class="block-snippet__desc">Statistiche animate con contatore. I numeri si animano da 0 al valore target quando lo scroll raggiunge la sezione. Varianti: "navy" o "light".</div>
+    <div class="block-snippet__code">
+        <button class="copy-btn" onclick="copySnippet(this)">Copia</button>
+<pre><code>&lt;!-- wp:cesana/testimonial-stats {"title":"Perché scegliere Cesana Assicuratori","variant":"navy","stats":[{"value":"30","suffix":"+","label":"Anni di Esperienza"},{"value":"98","suffix":"%","label":"Clienti Soddisfatti"},{"value":"500","suffix":"+","label":"Polizze Gestite"},{"value":"15","suffix":"+","label":"Convenzioni Attive"}]} /--&gt;</code></pre>
+    </div>
+</div>
+
+<!-- ===== HOMEPAGE COMPLETA ===== -->
+<div class="block-snippet">
+    <div class="block-snippet__header">
+        <span class="block-snippet__title">Homepage Completa (tutti i blocchi)</span>
+        <span class="block-snippet__badge">Full Page</span>
+    </div>
+    <div class="block-snippet__desc">Copia tutto questo snippet per creare una homepage completa con tutti i blocchi nell'ordine consigliato.</div>
+    <div class="block-snippet__code">
+        <button class="copy-btn" onclick="copySnippet(this)">Copia</button>
+<pre><code>&lt;!-- wp:cesana/hero-banner {"slides":[{"image":"https://placehold.co/1920x800/0B1D3A/C9A84C?text=Assicurati","eyebrow":"Cesana Assicuratori","title":"Assicurati &amp; Rilassati","subtitle":"Da oltre 30 anni al fianco di aziende e professionisti. Broker assicurativo indipendente a Lissone.","buttonText":"Richiedi Consulenza Gratuita","buttonUrl":"#consulenza"},{"image":"https://placehold.co/1920x800/132B50/C9A84C?text=Risk+Management","eyebrow":"Risk Management","title":"Reputazione + Rispetto = Risultato","subtitle":"Analisi dei rischi, ottimizzazione polizze, riduzione costi.","buttonText":"Scopri i Servizi","buttonUrl":"/prodotti-assicurativi"}],"autoplay":8000} /--&gt;
+
+&lt;!-- wp:cesana/trust-indicators {"variant":"dark","indicators":[{"icon":"clock","title":"30+ Anni","description":"di esperienza"},{"icon":"star","title":"98%","description":"clienti soddisfatti"},{"icon":"shield","title":"IVASS","description":"N. B000148399"},{"icon":"handshake","title":"Indipendente","description":"broker imparziale"}]} /--&gt;
+
+&lt;!-- wp:cesana/services-grid {"title":"I Nostri Servizi","subtitle":"Soluzioni assicurative personalizzate per ogni esigenza","columns":3,"services":[{"icon":"building","title":"Aziende","description":"RC, Property All Risk, D&amp;O, Infortuni, Tutela Legale","url":"/prodotti-assicurativi/polizze-aziende"},{"icon":"tool","title":"Artigiani","description":"RC, Incendio, Furto, Trasporti, Assistenza","url":"/prodotti-assicurativi/polizze-artigiani"},{"icon":"shop","title":"Commercio","description":"Incendio, Furto, Cristalli, RC, Assistenza","url":"/prodotti-assicurativi/commercio"},{"icon":"stethoscope","title":"RC Professionale","description":"Area Tecnica, Giuridica e Medica","url":"/prodotti-assicurativi/rcp-area-tecnica"},{"icon":"lock","title":"Cyber Risks","description":"Protezione patrimonio informatico aziendale","url":"/prodotti-assicurativi/cyber-risks"},{"icon":"car","title":"Auto Storiche","description":"Polizze All Risks per veicoli d'epoca","url":"/prodotti-assicurativi/auto-storiche-e-moto-d-epoca"}]} /--&gt;
+
+&lt;!-- wp:cesana/cta-banner {"eyebrow":"Cesana Assicuratori","title":"Reputazione + Rispetto = Risultato","text":"Da oltre 30 anni al fianco di aziende e professionisti.","buttonText":"Contattaci Ora","buttonUrl":"/contatti/dove-siamo","variant":"navy"} /--&gt;
+
+&lt;!-- wp:cesana/testimonial-stats {"title":"Perché scegliere Cesana Assicuratori","variant":"navy","stats":[{"value":"30","suffix":"+","label":"Anni di Esperienza"},{"value":"98","suffix":"%","label":"Clienti Soddisfatti"},{"value":"500","suffix":"+","label":"Polizze Gestite"},{"value":"15","suffix":"+","label":"Convenzioni Attive"}]} /--&gt;
+
+&lt;!-- wp:cesana/faq-schema {"title":"Domande Frequenti","items":[{"question":"Qual è la differenza tra un broker e un agente?","answer":"Il broker è un intermediario &lt;strong&gt;indipendente&lt;/strong&gt; che lavora esclusivamente nell'interesse del cliente, non rappresenta nessuna compagnia."},{"question":"La consulenza iniziale è gratuita?","answer":"Sì, la prima consulenza è sempre gratuita e senza impegno."},{"question":"In quali zone operate?","answer":"Sede a Lissone (MB). Operiamo in Monza e Brianza, Varese e Milano, ma gestiamo clienti su tutto il territorio nazionale."}]} /--&gt;
+
+&lt;!-- wp:cesana/consultation-form {"title":"Ottieni una consulenza gratuita","subtitle":"Compila il modulo e ti ricontatteremo entro 24 ore.","variant":"dark"} /--&gt;</code></pre>
+    </div>
+</div>
+
+<script>
+function copySnippet(btn) {
+    const code = btn.parentElement.querySelector('code');
+    const text = code.textContent
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&amp;/g, '&');
+    navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copiato!';
+        setTimeout(() => btn.textContent = 'Copia', 2000);
+    });
+}
+</script>
+
+</body>
+</html>

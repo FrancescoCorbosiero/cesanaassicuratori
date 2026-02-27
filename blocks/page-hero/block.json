@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "cesana/page-hero",
+    "version": "1.0.0",
+    "title": "Page Hero",
+    "category": "cesana",
+    "icon": "cover-image",
+    "description": "Header hero per pagine interne con breadcrumbs e titolo.",
+    "keywords": ["hero", "header", "pagina", "breadcrumbs"],
+    "textdomain": "cesana-assicuratori-blocks",
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": "Titolo Pagina"
+        },
+        "subtitle": {
+            "type": "string",
+            "default": ""
+        },
+        "backgroundImage": {
+            "type": "string",
+            "default": ""
+        },
+        "breadcrumbs": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "supports": {
+        "align": ["full"],
+        "html": false
+    },
+    "editorScript": "file:./editor.js",
+    "render": "file:./render.php"
+}

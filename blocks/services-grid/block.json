@@ -1,0 +1,55 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "cesana/services-grid",
+    "version": "1.0.0",
+    "title": "Services Grid",
+    "category": "cesana",
+    "icon": "grid-view",
+    "description": "Griglia di card per i servizi assicurativi con icone e link alle pagine prodotto.",
+    "keywords": ["servizi", "grid", "card", "prodotti", "assicurazioni"],
+    "textdomain": "cesana-assicuratori-blocks",
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": "I Nostri Servizi"
+        },
+        "subtitle": {
+            "type": "string",
+            "default": ""
+        },
+        "services": {
+            "type": "array",
+            "default": [
+                {
+                    "title": "Assicurazioni Aziendali",
+                    "description": "Soluzioni complete per proteggere la tua attività, i dipendenti e il patrimonio aziendale.",
+                    "icon": "building",
+                    "url": ""
+                },
+                {
+                    "title": "RC Professionale",
+                    "description": "Copertura della responsabilità civile per professionisti e studi associati.",
+                    "icon": "briefcase",
+                    "url": ""
+                },
+                {
+                    "title": "Polizze Salute",
+                    "description": "Piani sanitari individuali e collettivi con le migliori compagnie del mercato.",
+                    "icon": "heart",
+                    "url": ""
+                }
+            ]
+        },
+        "columns": {
+            "type": "number",
+            "default": 3
+        }
+    },
+    "supports": {
+        "align": ["wide"],
+        "html": false
+    },
+    "editorScript": "file:./editor.js",
+    "render": "file:./render.php"
+}

@@ -1,0 +1,52 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "cesana/why-broker",
+    "version": "1.0.0",
+    "title": "Perché Scegliere Cesana",
+    "category": "cesana",
+    "icon": "star-filled",
+    "description": "Sezione editoriale con numeri decorativi giganti e motivazioni per scegliere un broker indipendente.",
+    "keywords": ["perché", "broker", "vantaggi", "scegliere", "why"],
+    "textdomain": "cesana-assicuratori-blocks",
+    "attributes": {
+        "eyebrow": {
+            "type": "string",
+            "default": "Perché un Broker"
+        },
+        "title": {
+            "type": "string",
+            "default": "Perché Scegliere Cesana Assicuratori"
+        },
+        "subtitle": {
+            "type": "string",
+            "default": ""
+        },
+        "reasons": {
+            "type": "array",
+            "default": [
+                {
+                    "title": "Indipendenza Totale",
+                    "description": "Non siamo legati a nessuna compagnia. Scegliamo la soluzione migliore per te, sempre.",
+                    "icon": "balance"
+                },
+                {
+                    "title": "Analisi del Mercato",
+                    "description": "Confrontiamo oltre 50 compagnie per offrirti le condizioni più vantaggiose.",
+                    "icon": "chart"
+                },
+                {
+                    "title": "Assistenza Dedicata",
+                    "description": "Un referente unico che ti segue in ogni fase, dalla consulenza alla gestione del sinistro.",
+                    "icon": "handshake"
+                }
+            ]
+        }
+    },
+    "supports": {
+        "align": ["wide"],
+        "html": false
+    },
+    "editorScript": "file:./editor.js",
+    "render": "file:./render.php"
+}
