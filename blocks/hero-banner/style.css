@@ -1,0 +1,214 @@
+/**
+ * cesana/hero-banner — Frontend Styles
+ * Homepage full-height hero with optional crossfade slides
+ */
+
+.ca-hero-banner {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    min-height: 500px;
+    max-height: 1000px;
+    overflow: hidden;
+    background: var(--ca-navy-dark);
+}
+
+.ca-hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.2s var(--ca-ease-in-out);
+}
+
+.ca-hero-slide--active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.ca-hero-slide__bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.ca-hero-slide__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ken Burns — slow zoom on active slide */
+.ca-hero-slide--active .ca-hero-slide__bg img {
+    animation: ca-ken-burns 12s var(--ca-ease-subtle) forwards;
+}
+
+@keyframes ca-ken-burns {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.06);
+    }
+}
+
+.ca-hero-slide__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(12, 12, 20, 0.85) 0%,
+            rgba(12, 12, 20, 0.4) 40%,
+            rgba(12, 12, 20, 0.2) 100%);
+}
+
+.ca-hero-slide__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 100%;
+    max-width: var(--ca-max-width);
+    margin: 0 auto;
+    padding: var(--ca-space-2xl) var(--ca-space-2xl) var(--ca-space-5xl);
+    color: var(--ca-white);
+}
+
+.ca-hero-slide__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--ca-font-sans);
+    font-size: var(--ca-text-xs);
+    font-weight: 500;
+    letter-spacing: var(--ca-tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--ca-gold);
+    margin-bottom: var(--ca-space-md);
+}
+
+.ca-hero-slide__eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--ca-gold);
+    margin-right: 0.75rem;
+}
+
+.ca-hero-slide__title {
+    font-family: var(--ca-font-display);
+    font-size: var(--ca-text-5xl);
+    font-weight: 400;
+    line-height: 1.0;
+    letter-spacing: var(--ca-tracking-tight);
+    margin-bottom: var(--ca-space-lg);
+    max-width: 800px;
+}
+
+.ca-hero-slide__subtitle {
+    font-family: var(--ca-font-sans);
+    font-size: var(--ca-text-lg);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: var(--ca-space-xl);
+    max-width: 480px;
+    opacity: 0.75;
+}
+
+.ca-hero-slide__cta {
+    display: flex;
+    gap: var(--ca-space-md);
+    flex-wrap: wrap;
+}
+
+/* Hero navigation — thin horizontal lines */
+.ca-hero-nav {
+    position: absolute;
+    bottom: var(--ca-space-xl);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    display: flex;
+    gap: var(--ca-space-sm);
+    align-items: center;
+}
+
+.ca-hero-dot {
+    width: 24px;
+    height: 2px;
+    border-radius: 0;
+    border: none;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.4s var(--ca-ease-premium);
+    padding: 0;
+}
+
+.ca-hero-dot--active {
+    background: var(--ca-gold);
+    width: 40px;
+}
+
+.ca-hero-arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--ca-space-lg);
+    pointer-events: none;
+}
+
+.ca-hero-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 0;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(12, 12, 20, 0.2);
+    backdrop-filter: blur(var(--ca-blur-sm));
+    color: var(--ca-white);
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.3s var(--ca-ease-premium);
+    padding: 0;
+}
+
+.ca-hero-arrow:hover {
+    background: var(--ca-gold);
+    border-color: var(--ca-gold);
+    color: var(--ca-navy-dark);
+}
+
+.ca-hero-arrow svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .ca-hero-banner {
+        height: 75vh;
+        min-height: 400px;
+    }
+
+    .ca-hero-slide__content {
+        padding: var(--ca-space-lg) var(--ca-space-lg) var(--ca-space-4xl);
+    }
+
+    .ca-hero-arrows {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .ca-hero-slide__title {
+        line-height: 1.05;
+    }
+}

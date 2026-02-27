@@ -1,0 +1,98 @@
+/**
+ * cesana/trust-indicators — Frontend Styles
+ * Horizontal strip with thin dividers — editorial, not bubbly
+ */
+
+.ca-trust-indicators {
+    padding: var(--ca-space-3xl) 0;
+    background: var(--ca-white);
+}
+
+.ca-trust-indicators--dark {
+    background: var(--ca-navy-dark);
+    color: var(--ca-white);
+}
+
+.ca-trust-indicators__container {
+    max-width: var(--ca-max-width);
+    margin: 0 auto;
+    padding: 0 var(--ca-space-xl);
+    display: flex;
+    justify-content: center;
+}
+
+.ca-trust-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--ca-space-md);
+    padding: 0 var(--ca-space-2xl);
+    border-right: 1px solid var(--ca-gray-200);
+}
+
+.ca-trust-indicator:last-child {
+    border-right: none;
+}
+
+.ca-trust-indicators--dark .ca-trust-indicator {
+    border-right-color: rgba(255, 255, 255, 0.12);
+}
+
+.ca-trust-indicator__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    color: var(--ca-gold);
+}
+
+.ca-trust-indicator__icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.ca-trust-indicator__title {
+    display: block;
+    font-family: var(--ca-font-display);
+    font-size: var(--ca-text-xl);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: var(--ca-tracking-tight);
+}
+
+.ca-trust-indicator__desc {
+    display: block;
+    font-size: var(--ca-text-xs);
+    opacity: 0.6;
+    line-height: 1.4;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .ca-trust-indicators__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--ca-space-lg);
+    }
+
+    .ca-trust-indicator {
+        border-right: none;
+        border-bottom: 1px solid var(--ca-gray-200);
+        padding: var(--ca-space-md) 0;
+    }
+
+    .ca-trust-indicators--dark .ca-trust-indicator {
+        border-bottom-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .ca-trust-indicator:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .ca-trust-indicators__container {
+        grid-template-columns: 1fr;
+    }
+}

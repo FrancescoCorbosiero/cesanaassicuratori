@@ -9,6 +9,7 @@
     "description": "Form di richiesta consulenza gratuita con invio AJAX. Presente su ogni pagina prodotto.",
     "keywords": ["form", "contatto", "consulenza", "email", "richiesta"],
     "textdomain": "cesana-assicuratori-blocks",
+    "requiresAtLeast": "6.5",
     "attributes": {
         "title": {
             "type": "string",
@@ -40,6 +41,9 @@
         "align": ["wide"],
         "html": false
     },
+    "example": {},
     "editorScript": "file:./editor.js",
+    "style": "file:./style.css",
+    "viewScriptModule": "file:./view.js",
     "render": "file:./render.php"
 }

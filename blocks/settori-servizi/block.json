@@ -9,6 +9,7 @@
     "description": "Griglia bento asimmetrica per settori e servizi assicurativi con icone e layout moderno.",
     "keywords": ["settori", "servizi", "bento", "grid", "mosaico"],
     "textdomain": "cesana-assicuratori-blocks",
+    "requiresAtLeast": "6.5",
     "attributes": {
         "eyebrow": {
             "type": "string",
@@ -53,6 +54,8 @@
         "align": ["wide", "full"],
         "html": false
     },
+    "example": {},
     "editorScript": "file:./editor.js",
+    "style": "file:./style.css",
     "render": "file:./render.php"
 }

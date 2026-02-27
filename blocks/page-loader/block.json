@@ -9,6 +9,7 @@
     "description": "Animated loader overlay with logo and tagline, shown once per session on first page load.",
     "keywords": ["loader", "loading", "splash", "intro", "animazione"],
     "textdomain": "cesana-assicuratori-blocks",
+    "requiresAtLeast": "6.5",
     "attributes": {
         "logoUrl": {
             "type": "string",
@@ -28,6 +29,8 @@
         "html": false,
         "multiple": false
     },
+    "example": {},
     "editorScript": "file:./editor.js",
+    "style": "file:./style.css",
     "render": "file:./render.php"
 }

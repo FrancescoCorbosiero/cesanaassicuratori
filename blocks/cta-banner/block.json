@@ -9,6 +9,7 @@
     "description": "Banner call-to-action a larghezza piena con varianti navy, oro e chiaro.",
     "keywords": ["cta", "banner", "azione", "contatto", "consulenza"],
     "textdomain": "cesana-assicuratori-blocks",
+    "requiresAtLeast": "6.5",
     "attributes": {
         "eyebrow": {
             "type": "string",
@@ -16,7 +17,7 @@
         },
         "title": {
             "type": "string",
-            "default": "Proteggi Ciò Che Conta"
+            "default": "Proteggi Ci\u00f2 Che Conta"
         },
         "text": {
             "type": "string",
@@ -44,6 +45,8 @@
         "align": ["full"],
         "html": false
     },
+    "example": {},
     "editorScript": "file:./editor.js",
+    "style": "file:./style.css",
     "render": "file:./render.php"
 }

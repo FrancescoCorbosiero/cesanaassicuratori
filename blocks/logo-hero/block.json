@@ -9,6 +9,7 @@
     "description": "Sezione hero centrata sul brand con logo grande, tagline editoriale e CTA prominente.",
     "keywords": ["logo", "brand", "hero", "identita", "cta"],
     "textdomain": "cesana-assicuratori-blocks",
+    "requiresAtLeast": "6.5",
     "attributes": {
         "logoUrl": {
             "type": "string",
@@ -47,6 +48,8 @@
         "align": ["wide", "full"],
         "html": false
     },
+    "example": {},
     "editorScript": "file:./editor.js",
+    "style": "file:./style.css",
     "render": "file:./render.php"
 }

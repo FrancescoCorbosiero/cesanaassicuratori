@@ -9,6 +9,7 @@
     "description": "Striscia orizzontale con indicatori di fiducia: anni di esperienza, soddisfazione, certificazioni.",
     "keywords": ["trust", "fiducia", "badge", "indicatori", "esperienza"],
     "textdomain": "cesana-assicuratori-blocks",
+    "requiresAtLeast": "6.5",
     "attributes": {
         "indicators": {
             "type": "array",
@@ -45,6 +46,8 @@
         "align": ["wide", "full"],
         "html": false
     },
+    "example": {},
     "editorScript": "file:./editor.js",
+    "style": "file:./style.css",
     "render": "file:./render.php"
 }

@@ -1,0 +1,180 @@
+/**
+ * Cesana Assicuratori — Base Reset & Button System
+ * Global reset for plugin blocks and reusable button components.
+ */
+
+/* ==========================================================================
+   Base Reset for Blocks
+   ========================================================================== */
+
+.ca-block,
+.ca-block *,
+.ca-block *::before,
+.ca-block *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.ca-block {
+    font-family: var(--ca-font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.55;
+    color: var(--ca-gray-800);
+}
+
+.ca-block img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ca-block a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s var(--ca-ease-premium);
+}
+
+/* ==========================================================================
+   Button System
+   ========================================================================== */
+
+.ca-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    font-family: var(--ca-font-sans);
+    font-size: var(--ca-text-xs);
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: var(--ca-radius-md);
+    cursor: pointer;
+    transition: all 0.3s var(--ca-ease-premium);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.ca-btn:focus-visible {
+    outline: 2px solid var(--ca-gold);
+    outline-offset: 2px;
+}
+
+/* Primary — black bg, white text */
+.ca-btn--primary {
+    background-color: var(--ca-navy);
+    color: var(--ca-white);
+    border-color: var(--ca-navy);
+}
+
+.ca-btn--primary:hover {
+    background-color: var(--ca-navy-light);
+    border-color: var(--ca-gold);
+}
+
+/* Gold — gold bg, black text (primary CTA) */
+.ca-btn--gold {
+    background-color: var(--ca-gold);
+    color: var(--ca-navy);
+    border-color: var(--ca-gold);
+}
+
+.ca-btn--gold:hover {
+    background-color: var(--ca-gold-light);
+    border-color: var(--ca-gold-light);
+    color: var(--ca-navy-dark);
+}
+
+/* Outline — transparent with border */
+.ca-btn--outline {
+    background-color: transparent;
+    color: var(--ca-navy);
+    border-color: var(--ca-navy);
+}
+
+.ca-btn--outline:hover {
+    background-color: var(--ca-navy);
+    color: var(--ca-white);
+}
+
+/* Ghost — text only with underline reveal */
+.ca-btn--ghost {
+    background: none;
+    color: var(--ca-gold);
+    border-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ca-btn--ghost:hover {
+    color: var(--ca-gold-dark);
+}
+
+/* Ghost white — for dark backgrounds, animated underline */
+.ca-btn--ghost-white {
+    background: none;
+    color: var(--ca-white);
+    border-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+}
+
+.ca-btn--ghost-white::after {
+    content: '';
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--ca-gold);
+    transition: width 0.4s var(--ca-ease-premium);
+}
+
+.ca-btn--ghost-white:hover::after {
+    width: 100%;
+}
+
+/* Sizes */
+.ca-btn--large {
+    padding: 1rem 2.5rem;
+    font-size: var(--ca-text-sm);
+}
+
+.ca-btn--small {
+    padding: 0.5rem 1rem;
+    font-size: clamp(0.6875rem, 0.66rem + 0.1vw, 0.75rem);
+}
+
+/* White variant for dark backgrounds */
+.ca-btn--outline-white {
+    background-color: transparent;
+    color: var(--ca-white);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.ca-btn--outline-white:hover {
+    background-color: var(--ca-white);
+    color: var(--ca-navy);
+    border-color: var(--ca-white);
+}
+
+/* ==========================================================================
+   content-visibility for below-the-fold sections
+   ========================================================================== */
+
+.ca-services-grid,
+.ca-faq,
+.ca-testimonials,
+.ca-stats,
+.ca-consultation-form,
+.ca-why-broker,
+.ca-settori,
+.ca-convenzioni {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+}

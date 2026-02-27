@@ -1,0 +1,157 @@
+/**
+ * cesana/services-grid — Frontend Styles
+ * Insurance product category cards — type-driven, no boxes
+ */
+
+.ca-services-grid {
+    padding: var(--ca-space-section) 0;
+    background: var(--ca-white);
+}
+
+.ca-services-grid__container {
+    max-width: var(--ca-max-width);
+    margin: 0 auto;
+    padding: 0 var(--ca-space-xl);
+}
+
+.ca-services-grid__header {
+    text-align: left;
+    margin-bottom: var(--ca-space-2xl);
+}
+
+.ca-services-grid__title {
+    font-family: var(--ca-font-display);
+    font-size: var(--ca-text-3xl);
+    font-weight: 400;
+    color: var(--ca-navy);
+    margin-bottom: var(--ca-space-sm);
+}
+
+.ca-services-grid__subtitle {
+    font-size: var(--ca-text-base);
+    color: var(--ca-gray-500);
+    max-width: var(--ca-max-width-text);
+}
+
+.ca-services-grid__grid {
+    display: grid;
+    gap: 0;
+}
+
+.ca-services-grid__grid--2col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.ca-services-grid__grid--3col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.ca-services-grid__grid--4col {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.ca-service-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--ca-space-xl) var(--ca-space-lg) var(--ca-space-xl) 0;
+    background: transparent;
+    border: none;
+    border-top: 1px solid var(--ca-gray-200);
+    border-radius: 0;
+    box-shadow: none;
+    text-decoration: none;
+    color: inherit;
+    transition: none;
+}
+
+.ca-service-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.ca-service-card:hover .ca-service-card__title {
+    color: var(--ca-gold);
+}
+
+.ca-service-card:hover .ca-service-card__link {
+    color: var(--ca-gold);
+}
+
+.ca-service-card:hover .ca-service-card__link::after {
+    width: 100%;
+}
+
+.ca-service-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 0;
+    background: transparent;
+    border: 1px solid var(--ca-gray-200);
+    color: var(--ca-navy);
+    margin-bottom: var(--ca-space-lg);
+}
+
+.ca-service-card__icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.ca-service-card__title {
+    font-family: var(--ca-font-display);
+    font-size: var(--ca-text-xl);
+    font-weight: 400;
+    color: var(--ca-navy);
+    margin-bottom: var(--ca-space-sm);
+    transition: color 0.3s var(--ca-ease-premium);
+}
+
+.ca-service-card__desc {
+    font-size: var(--ca-text-sm);
+    color: var(--ca-gray-500);
+    margin-bottom: var(--ca-space-lg);
+    flex-grow: 1;
+}
+
+.ca-service-card__link {
+    font-family: var(--ca-font-sans);
+    font-size: var(--ca-text-xs);
+    font-weight: 600;
+    color: var(--ca-gold-dark);
+    text-transform: uppercase;
+    letter-spacing: var(--ca-tracking-eyebrow);
+    transition: color 0.3s var(--ca-ease-premium);
+    position: relative;
+    display: inline-block;
+}
+
+.ca-service-card__link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--ca-gold);
+    transition: width 0.4s var(--ca-ease-premium);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+
+    .ca-services-grid__grid--3col,
+    .ca-services-grid__grid--4col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .ca-services-grid__grid--2col,
+    .ca-services-grid__grid--3col,
+    .ca-services-grid__grid--4col {
+        grid-template-columns: 1fr;
+    }
+}

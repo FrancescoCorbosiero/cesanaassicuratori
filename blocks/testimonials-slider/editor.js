@@ -6,7 +6,7 @@
     const { PanelBody, TextControl, TextareaControl,
             RangeControl, Button }                 = wp.components;
 
-    registerBlockType('cesana/testimonials', {
+    registerBlockType('cesana/testimonials-slider', {
         edit: function({ attributes, setAttributes }) {
             var eyebrow      = attributes.eyebrow;
             var title        = attributes.title;

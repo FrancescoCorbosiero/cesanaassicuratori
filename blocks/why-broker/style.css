@@ -1,0 +1,143 @@
+/**
+ * cesana/why-broker — Frontend Styles
+ * "Perché Scegliere Cesana" — editorial asymmetric layout with ghost numbers
+ */
+
+.ca-why-broker {
+    padding: var(--ca-space-section) 0;
+    background: var(--ca-white);
+    overflow: hidden;
+}
+
+.ca-why-broker__container {
+    max-width: var(--ca-max-width);
+    margin: 0 auto;
+    padding: 0 var(--ca-space-xl);
+}
+
+.ca-why-broker__header {
+    margin-bottom: var(--ca-space-4xl);
+}
+
+.ca-why-broker__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--ca-font-sans);
+    font-size: var(--ca-text-xs);
+    font-weight: 500;
+    letter-spacing: var(--ca-tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--ca-gold);
+    margin-bottom: var(--ca-space-md);
+}
+
+.ca-why-broker__eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--ca-gold);
+    margin-right: 0.75rem;
+}
+
+.ca-why-broker__title {
+    font-family: var(--ca-font-display);
+    font-size: var(--ca-text-4xl);
+    font-weight: 400;
+    color: var(--ca-navy);
+    line-height: 1.05;
+    max-width: 600px;
+}
+
+.ca-why-broker__subtitle {
+    font-size: var(--ca-text-lg);
+    color: var(--ca-gray-500);
+    margin-top: var(--ca-space-md);
+    max-width: 500px;
+}
+
+.ca-why-broker__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+}
+
+.ca-why-broker__item {
+    position: relative;
+    padding: var(--ca-space-3xl) var(--ca-space-2xl) var(--ca-space-3xl) 0;
+    border-top: 1px solid var(--ca-gray-200);
+    overflow: hidden;
+}
+
+/* Oversized ghost number */
+.ca-why-broker__number {
+    position: absolute;
+    top: -0.15em;
+    right: 0;
+    font-family: var(--ca-font-display);
+    font-size: clamp(8rem, 5rem + 12vw, 14rem);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--ca-gray-100);
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    transition: color 0.6s var(--ca-ease-premium);
+}
+
+.ca-why-broker__item:hover .ca-why-broker__number {
+    color: rgba(184, 151, 63, 0.08);
+}
+
+.ca-why-broker__item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--ca-gold);
+    color: var(--ca-gold);
+    margin-bottom: var(--ca-space-lg);
+    position: relative;
+    z-index: 1;
+}
+
+.ca-why-broker__item-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.ca-why-broker__item-title {
+    font-family: var(--ca-font-display);
+    font-size: var(--ca-text-2xl);
+    font-weight: 400;
+    color: var(--ca-navy);
+    margin-bottom: var(--ca-space-sm);
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s var(--ca-ease-premium);
+}
+
+.ca-why-broker__item:hover .ca-why-broker__item-title {
+    color: var(--ca-gold-dark);
+}
+
+.ca-why-broker__item-desc {
+    font-size: var(--ca-text-base);
+    color: var(--ca-gray-500);
+    line-height: 1.7;
+    max-width: 400px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .ca-why-broker__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ca-why-broker__number {
+        font-size: clamp(5rem, 3rem + 8vw, 8rem);
+    }
+}

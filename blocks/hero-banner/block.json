@@ -9,6 +9,7 @@
     "description": "Banner hero full-screen con crossfade e CTA per homepage broker assicurativo.",
     "keywords": ["hero", "banner", "slider", "homepage"],
     "textdomain": "cesana-assicuratori-blocks",
+    "requiresAtLeast": "6.5",
     "attributes": {
         "slides": {
             "type": "array",
@@ -40,6 +41,9 @@
         "align": ["full"],
         "html": false
     },
+    "example": {},
     "editorScript": "file:./editor.js",
+    "style": "file:./style.css",
+    "viewScriptModule": "file:./view.js",
     "render": "file:./render.php"
 }

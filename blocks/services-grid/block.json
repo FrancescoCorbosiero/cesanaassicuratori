@@ -9,6 +9,7 @@
     "description": "Griglia di card per i servizi assicurativi con icone e link alle pagine prodotto.",
     "keywords": ["servizi", "grid", "card", "prodotti", "assicurazioni"],
     "textdomain": "cesana-assicuratori-blocks",
+    "requiresAtLeast": "6.5",
     "attributes": {
         "title": {
             "type": "string",
@@ -50,6 +51,8 @@
         "align": ["wide"],
         "html": false
     },
+    "example": {},
     "editorScript": "file:./editor.js",
+    "style": "file:./style.css",
     "render": "file:./render.php"
 }
